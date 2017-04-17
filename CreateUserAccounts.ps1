@@ -26,7 +26,7 @@ foreach($part in $split)
 
 #Declare any Variables
 $dirpath = $pwd.path
-$orgUnit = "CN=Users"
+$orgUnit = "OU=Users"
 $dummyPassword = ConvertTo-SecureString -AsPlainText "P@ss1W0Rd!" -Force
 $counter = 0
 
