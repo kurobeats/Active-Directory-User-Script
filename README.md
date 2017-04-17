@@ -4,8 +4,8 @@ Create Contoso Users in Active Directory This script creates 270 + users in Acti
 ***Original Author: Mark Rhodes - markrhodes@gmail.com - @mrhodes***
 
 **To Use:** 
-Extract all files and run "CreateUserAccounts.ps1 from an Administrative PowerShell prompt.
+Extract all files and run CreateUserAccounts.ps1 from an Administrative PowerShell prompt.
 
 **Requirements:**
 * Active Directory RSAT tools installed.
-* User Account with sufficient privilegse to create accounts in "USERS" Container.
+* User Account with sufficient privilege to create accounts in "USERS" Container.
