@@ -3,11 +3,25 @@ Import-module activedirectory
 
 #Autopopulate Domain
 $dnsDomain =gc env:USERDNSDOMAIN
+
+# Original
+#$split = $dnsDomain.split(".")
+#if ($split[2] -ne $null) {
+#	$domain = "DC=$($split[0]),DC=$($split[1]),DC=$($split[2])"
+#} else {
+#	$domain = "DC=$($split[0]),DC=$($split[1])"
+#}
+
+# fix by m.hase https://social.technet.microsoft.com/profile/m.hase/
 $split = $dnsDomain.split(".")
-if ($split[2] -ne $null) {
-	$domain = "DC=$($split[0]),DC=$($split[1]),DC=$($split[2])"
-} else {
-	$domain = "DC=$($split[0]),DC=$($split[1])"
+$domain=$null
+foreach($part in $split)
+{
+	if($domain -ne $null)
+	{
+		$domain+=","
+	}
+	$domain += "DC=$part"
 }
 
 #Declare any Variables
